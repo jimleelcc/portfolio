@@ -1,13 +1,16 @@
-<!--<h1>这是主页</h1>
-{% for gallery in gallerys.all %}
-	{{ gallery.description }}
-    <img src="{{ gallery.image.url }}">
-{% endfor %} -->
-
-
+<!--<h1>博客</h1>
+{% for blog in blogs.all %}
+    {{ blog.title }}
+    <br>
+    {{ blog.date }}
+    <br>
+    <img src="{{ blog.image.url }}" height="20%">  
+    <br>
+    {{ blog.test }}
+    <br>
+{% endfor %}-->
 <!doctype html>
 <html lang="en">
-{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,37 +62,26 @@
 
       <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">你好，我是美国队长</h1>
-          <img src="{% static "catain_america.jpg" %}"width='30%'>
+          <h1 class="jumbotron-heading">我的博客</h1>
+          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <p>
-            <a href="blog" class="btn btn-primary my-2">我的博客</a>
-<<<<<<< HEAD
-            <a href="{% static 'resume.pdf' %}" class="btn btn-primary my-2">我的简历</a>
-=======
->>>>>>> master
+            <a href="#" class="btn btn-primary my-2">回到主页</a>
           </p>
         </div>
       </section>
-
-      <div class="album py-5 bg-light">
-        <div class="container">
-
-          <div class="row">
-
-            {% for gallery in gallerys.all %}
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="card-img-top" src="{{ gallery.image.url }}">
-                <div class="card-body">
-                  <p class="card-text">{{ gallery.description }}</p>
-                  
-                </div>
-              </div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
-      </div>
+    <div class="container">
+        {% for blog in blogs.all %}
+        {{ blog.title }}
+        <br>
+        {{ blog.date }}
+        <br>
+        <img src="{{ blog.image.url }}" height=200>  
+        <br>
+        {{ blog.test }}
+        <br>
+        {% endfor %}
+    </div>
+      
 
     </main>
 

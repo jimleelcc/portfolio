@@ -77,7 +77,11 @@
       </section>
     <div class="container">
         {% for blog in blogs.all %}
+<<<<<<< HEAD
         <h2><a href="{{ blog.id }}">{{ blog.title }}</a></h2>
+=======
+        <h2><a href="">{{ blog.title }}</a></h2>
+>>>>>>> master
         {{ blog.date }}
         <br>
         <img src="{{ blog.image.url }}" height=200>  
